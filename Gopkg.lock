@@ -92,18 +92,6 @@
   version = "v1.0.1"
 
 [[projects]]
-  branch = "master"
-  digest = "1:2228d8679d51c3140504e92d3684ca727425010b82b1982567c0f55835c2550f"
-  name = "github.com/lexkong/log"
-  packages = [
-    ".",
-    "lager",
-    "lager/color",
-  ]
-  pruneopts = "UT"
-  revision = "972f9cd951fc7e5c8797f1fb2b57b63b09ff4de9"
-
-[[projects]]
   digest = "1:c568d7727aa262c32bdf8a3f7db83614f7af0ed661474b24588de635c20024c7"
   name = "github.com/magiconair/properties"
   packages = ["."]
@@ -270,7 +258,6 @@
   input-imports = [
     "github.com/fsnotify/fsnotify",
     "github.com/gin-gonic/gin",
-    "github.com/lexkong/log",
     "github.com/pkg/errors",
     "github.com/shirou/gopsutil/cpu",
     "github.com/shirou/gopsutil/disk",

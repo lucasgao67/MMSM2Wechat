@@ -2,8 +2,7 @@ package config
 
 import (
 	"github.com/fsnotify/fsnotify"
-	"github.com/lexkong/log"
-	"github.com/sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"os"
 	"strings"
@@ -53,7 +52,7 @@ func (c *Config) watchConfig() {
 }
 
 func (c *Config) initLog() {
-	logrus.SetOutput(os.Stdout)
-	logrus.SetFormatter(&logrus.JSONFormatter{})
-	logrus.SetLevel(logrus.DebugLevel)
+	log.SetOutput(os.Stdout)
+	log.SetFormatter(&log.JSONFormatter{})
+	log.SetLevel(log.DebugLevel)
 }

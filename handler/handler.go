@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"github.com/LucasGao67/MMSM2Wechat/pkg/errno"
 	"github.com/gin-gonic/gin"
-	"github.com/LucasGao67/firstgodemo/pkg/errno"
 	"net/http"
 )
 

@@ -46,7 +46,7 @@ func main() {
 
 func pingServer() error {
 	for i := 0; i < viper.GetInt("max_ping_count"); i++ {
-		resp, err := http.Get(viper.GetString("url") + "/sd/health")
+		resp, err := http.Get(viper.GetString("url") + viper.GetString("addr") + "/sd/health")
 		if err == nil && resp.StatusCode == http.StatusOK {
 			return nil
 		}

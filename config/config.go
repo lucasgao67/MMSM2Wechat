@@ -3,7 +3,9 @@ package config
 import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/lexkong/log"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
+	"os"
 	"strings"
 )
 
@@ -20,8 +22,10 @@ func Init(cfg string) error {
 	}
 
 	c.watchConfig()
-	return nil
 
+	c.initLog()
+
+	return nil
 }
 
 func (c *Config) initConfig() error {
@@ -46,4 +50,10 @@ func (c *Config) watchConfig() {
 	viper.OnConfigChange(func(in fsnotify.Event) {
 		log.Infof("Config file changed: %s", in.Name)
 	})
+}
+
+func (c *Config) initLog() {
+	logrus.SetOutput(os.Stdout)
+	logrus.SetFormatter(&logrus.JSONFormatter{})
+	logrus.SetLevel(logrus.DebugLevel)
 }

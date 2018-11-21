@@ -2,6 +2,7 @@ package router
 
 import (
 	"github.com/LucasGao67/MMSM2Wechat/handler/sd"
+	"github.com/LucasGao67/MMSM2Wechat/handler/verify"
 	"github.com/LucasGao67/MMSM2Wechat/router/middleware"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -27,7 +28,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 
 	u := g.Group("/v1/verify")
 	{
-		u.GET("",)
+		u.GET("", verify.Verify)
 	}
 
 	return g

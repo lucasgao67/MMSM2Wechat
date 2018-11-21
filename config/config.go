@@ -36,7 +36,7 @@ func (c *Config) initConfig() error {
 	}
 	viper.SetConfigType("yaml")
 	viper.AutomaticEnv()
-	viper.SetEnvPrefix("MSM2WECHAT")
+	viper.SetEnvPrefix("MMW")
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	if err := viper.ReadInConfig(); err != nil {
 		return err
